@@ -1,0 +1,10 @@
+.next/
+node_modules/
+out/
+dist/
+*.tsbuildinfo
+.env*
+!.env.example
+.vercel/
+.superpowers/
+test-fixtures/

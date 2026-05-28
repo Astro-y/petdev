@@ -1,0 +1,375 @@
+:root {
+  --ink: #20333a;
+  --muted: #66787d;
+  --paper: #fffdf6;
+  --mint: #9ddfc3;
+  --sky: #9bc9f5;
+  --coral: #ff9f86;
+  --sun: #ffd66b;
+  --leaf: #4d9b6d;
+  --line: #20333a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 18% 12%, rgba(255, 214, 107, 0.45), transparent 24rem),
+    radial-gradient(circle at 88% 8%, rgba(155, 201, 245, 0.5), transparent 22rem),
+    linear-gradient(180deg, #e6f7ef 0%, #f8f4dd 56%, #eecfb0 100%);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.shell {
+  width: min(1120px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 32px 0 56px;
+}
+
+.catalogHero,
+.detailHero,
+.installPanel,
+.infoPanel,
+.notice,
+.petCard {
+  border: 3px solid var(--line);
+  box-shadow: 8px 8px 0 rgba(32, 51, 58, 0.18);
+}
+
+.catalogHero {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 24px;
+  align-items: center;
+  min-height: 320px;
+  padding: 42px;
+  background: linear-gradient(135deg, rgba(255, 253, 246, 0.92), rgba(157, 223, 195, 0.9));
+  border-radius: 8px;
+}
+
+.eyebrow,
+.status {
+  margin: 0 0 10px;
+  color: var(--leaf);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+h1,
+h2 {
+  margin: 0;
+  letter-spacing: 0;
+}
+
+h1 {
+  max-width: 760px;
+  font-size: clamp(3rem, 8vw, 5.8rem);
+  line-height: 0.94;
+}
+
+h2 {
+  font-size: 1.45rem;
+}
+
+.lede {
+  max-width: 660px;
+  margin: 18px 0 0;
+  color: #40565d;
+  font-size: 1.1rem;
+  line-height: 1.65;
+}
+
+.topLine,
+.detailTop {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.languageToggle {
+  display: inline-flex;
+  gap: 4px;
+  padding: 4px;
+  background: rgba(255, 253, 246, 0.86);
+  border: 2px solid var(--line);
+  border-radius: 999px;
+}
+
+.languageToggle button {
+  min-width: 42px;
+  height: 34px;
+  color: var(--ink);
+  background: transparent;
+  border: 0;
+  border-radius: 999px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.languageToggle button.active {
+  background: var(--sun);
+}
+
+.heroBadge {
+  display: grid;
+  place-items: center;
+  width: 124px;
+  aspect-ratio: 1;
+  background: var(--sun);
+  border: 3px solid var(--line);
+  border-radius: 50%;
+}
+
+.heroBadge strong {
+  font-size: 3rem;
+  line-height: 1;
+}
+
+.heroBadge span {
+  font-weight: 800;
+}
+
+.petGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 22px;
+  margin-top: 30px;
+}
+
+.petCard {
+  display: grid;
+  grid-template-columns: 144px 1fr;
+  gap: 18px;
+  min-height: 240px;
+  padding: 18px;
+  background: var(--paper);
+  border-radius: 8px;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.petCard:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 11px 11px 0 rgba(32, 51, 58, 0.18);
+}
+
+.petCardBody {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+}
+
+.petCardBody p {
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.tagRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.tagRow span {
+  padding: 7px 10px;
+  background: #eaf8f0;
+  border: 2px solid rgba(32, 51, 58, 0.16);
+  border-radius: 999px;
+  color: #315845;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.detailShell {
+  padding-top: 24px;
+}
+
+.detailTop {
+  margin-bottom: 18px;
+}
+
+.backLink {
+  display: inline-block;
+  font-weight: 800;
+}
+
+.detailHero {
+  display: grid;
+  grid-template-columns: minmax(280px, 390px) 1fr;
+  gap: 34px;
+  align-items: center;
+  padding: 30px;
+  background: rgba(255, 253, 246, 0.94);
+  border-radius: 8px;
+}
+
+.previewPanel {
+  display: grid;
+  place-items: center;
+}
+
+.detailGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.75fr);
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.installPanel,
+.infoPanel,
+.notice {
+  padding: 24px;
+  background: var(--paper);
+  border-radius: 8px;
+}
+
+.commandBox {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+  align-items: center;
+  margin-top: 20px;
+  padding: 12px;
+  background: #20333a;
+  border-radius: 8px;
+}
+
+.commandBox code {
+  overflow-x: auto;
+  color: #f8f4dd;
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+
+.commandBox button {
+  min-width: 74px;
+  height: 40px;
+  color: var(--ink);
+  background: var(--sun);
+  border: 0;
+  border-radius: 6px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+dl {
+  display: grid;
+  gap: 16px;
+  margin: 16px 0 0;
+}
+
+dt {
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+dd {
+  margin: 4px 0 0;
+  overflow-wrap: anywhere;
+  font-weight: 800;
+}
+
+.notice {
+  margin-top: 24px;
+  background: #fff2d2;
+}
+
+.notice p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+.spriteStage {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  min-height: 100%;
+  background:
+    linear-gradient(180deg, rgba(155, 201, 245, 0.35), rgba(157, 223, 195, 0.35)),
+    var(--paper);
+  border: 3px solid var(--line);
+  border-radius: 8px;
+}
+
+.spriteStage-small {
+  min-height: 198px;
+}
+
+.spriteStage-large {
+  min-height: 360px;
+}
+
+.sprite {
+  image-rendering: auto;
+}
+
+.sprite::before {
+  display: block;
+  width: var(--frame-width);
+  height: var(--frame-height);
+  content: "";
+  background-image: var(--sprite-url);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: var(--sheet-width) var(--sheet-height);
+  transform: scale(var(--preview-scale));
+  transform-origin: top left;
+  animation: idleSprite 1.1s steps(6) infinite;
+}
+
+@keyframes idleSprite {
+  to {
+    background-position-x: var(--idle-distance);
+  }
+}
+
+@media (max-width: 760px) {
+  .shell {
+    width: min(100% - 20px, 640px);
+    padding-top: 16px;
+  }
+
+  .catalogHero,
+  .detailHero,
+  .detailGrid,
+  .petCard {
+    grid-template-columns: 1fr;
+  }
+
+  .catalogHero {
+    min-height: auto;
+    padding: 26px;
+  }
+
+  .heroBadge {
+    width: 94px;
+  }
+
+  .petCard {
+    min-height: auto;
+  }
+
+  .commandBox {
+    grid-template-columns: 1fr;
+  }
+
+  .topLine,
+  .detailTop {
+    align-items: flex-start;
+  }
+}

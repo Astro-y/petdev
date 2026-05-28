@@ -1,0 +1,58 @@
+0 verbose cli D:\software\nodejs\node.exe D:\software\nodejs\node_modules\npm\bin\npm-cli.js
+1 info using npm@10.8.2
+2 info using node@v20.19.3
+3 silly config load:file:D:\software\nvm\nvm\v20.19.3\node_modules\npm\npmrc
+4 silly config load:file:C:\Users\田小宇\Desktop\petdev\.npmrc
+5 silly config load:file:C:\Users\田小宇\.npmrc
+6 silly config load:file:D:\software\nvm\nodejs\node_global\etc\npmrc
+7 verbose title npm publish
+8 verbose argv "publish" "--workspace" "packages/petdev" "--access" "public"
+9 verbose logfile logs-max:10 dir:C:\Users\田小宇\Desktop\petdev\.npm-cache\_logs\2026-05-28T15_04_36_170Z-
+10 verbose logfile C:\Users\田小宇\Desktop\petdev\.npm-cache\_logs\2026-05-28T15_04_36_170Z-debug-0.log
+11 silly logfile done cleaning log files
+12 verbose publish [ 'C:\\Users\\田小宇\\Desktop\\petdev\\packages\\petdev' ]
+13 silly packumentCache heap:4345298944 maxSize:1086324736 maxEntrySize:543162368
+14 warn publish npm auto-corrected some errors in your package.json when publishing.  Please run "npm pkg fix" to address these errors.
+15 warn publish errors corrected:
+15 warn publish "bin[petdev]" script name was cleaned
+16 notice
+17 notice package: petdev@0.1.0
+18 notice Tarball Contents
+19 notice 281B README.md
+19 notice 1.2kB bin/petdev.js
+19 notice 405B package.json
+19 notice 1.6kB src/catalog.js
+19 notice 3.0kB src/install.js
+19 notice 778B src/registry.js
+20 notice Tarball Details
+21 notice name: petdev
+22 notice version: 0.1.0
+23 notice filename: petdev-0.1.0.tgz
+24 notice package size: 3.2 kB
+25 notice unpacked size: 7.3 kB
+26 notice shasum: 1c0c526f46d6eb23728d2aeb5e3ed6281ea1b444
+27 notice integrity: sha512-H/RKqyqWKwFmG[...]EU+n9FAuPinsQ==
+28 notice total files: 6
+29 notice
+30 notice Publishing to https://registry.npmjs.org/ with tag latest and public access
+31 http fetch PUT 401 https://registry.npmjs.org/petdev 691ms
+32 verbose web auth opening url pair
+33 http fetch GET 202 https://registry.npmjs.org/-/v1/done?authId=*** 264ms
+34 http fetch GET 202 https://registry.npmjs.org/-/v1/done?authId=*** 240ms
+35 http fetch GET 202 https://registry.npmjs.org/-/v1/done?authId=*** 251ms
+36 http fetch GET 202 https://registry.npmjs.org/-/v1/done?authId=*** 265ms
+37 http fetch GET 202 https://registry.npmjs.org/-/v1/done?authId=*** 246ms
+38 http fetch GET 202 https://registry.npmjs.org/-/v1/done?authId=*** 245ms
+39 http fetch GET 202 https://registry.npmjs.org/-/v1/done?authId=*** 242ms
+40 http fetch GET 202 https://registry.npmjs.org/-/v1/done?authId=*** 546ms
+41 http fetch GET 202 https://registry.npmjs.org/-/v1/done?authId=*** 243ms
+42 http fetch GET 202 https://registry.npmjs.org/-/v1/done?authId=*** 235ms
+43 http fetch GET 200 https://registry.npmjs.org/-/v1/done?authId=*** 242ms
+44 verbose web auth done-check finished
+45 http fetch PUT 200 https://registry.npmjs.org/petdev 3046ms
+46 verbose cwd C:\Users\田小宇\Desktop\petdev
+47 verbose os Windows_NT 10.0.22621
+48 verbose node v20.19.3
+49 verbose npm  v10.8.2
+50 verbose exit 0
+51 info ok

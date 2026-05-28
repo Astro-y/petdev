@@ -1,0 +1,161 @@
+0 verbose cli D:\software\nodejs\node.exe D:\software\nodejs\node_modules\npm\bin\npm-cli.js
+1 info using npm@10.8.2
+2 info using node@v20.19.3
+3 silly config load:file:D:\software\nvm\nvm\v20.19.3\node_modules\npm\npmrc
+4 silly config load:file:C:\Users\田小宇\Desktop\petdev\.npmrc
+5 silly config load:file:C:\Users\田小宇\.npmrc
+6 silly config load:file:D:\software\nvm\nodejs\node_global\etc\npmrc
+7 verbose title npm login
+8 verbose argv "login"
+9 verbose logfile logs-max:10 dir:C:\Users\田小宇\Desktop\petdev\.npm-cache\_logs\2026-05-28T15_01_00_367Z-
+10 verbose logfile C:\Users\田小宇\Desktop\petdev\.npm-cache\_logs\2026-05-28T15_01_00_367Z-debug-0.log
+11 notice Log in on https://registry.npmmirror.com/
+12 verbose web login before first POST
+13 silly logfile done cleaning log files
+14 http fetch GET 200 https://registry.npmmirror.com/npm 106ms
+15 http fetch POST 200 https://registry.npmmirror.com/-/v1/login 454ms
+16 verbose web auth got response {
+16 verbose web auth   loginUrl: 'https://registry.npmmirror.com/-/v1/login/request/session/d4b24b27-d7f2-47d7-a717-0ee243b3a175',
+16 verbose web auth   doneUrl: 'https://registry.npmmirror.com/-/v1/login/done/session/d4b24b27-d7f2-47d7-a717-0ee243b3a175'
+16 verbose web auth }
+17 verbose web auth opening url pair
+18 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 55ms
+19 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 60ms
+20 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 57ms
+21 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 62ms
+22 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 65ms
+23 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 56ms
+24 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 63ms
+25 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 116ms
+26 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 54ms
+27 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 57ms
+28 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 53ms
+29 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 93ms
+30 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 53ms
+31 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 53ms
+32 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 113ms
+33 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 57ms
+34 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 53ms
+35 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 55ms
+36 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 52ms
+37 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 60ms
+38 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 54ms
+39 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 53ms
+40 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 52ms
+41 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 64ms
+42 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 51ms
+43 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 67ms
+44 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 65ms
+45 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 56ms
+46 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 143ms
+47 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 74ms
+48 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 68ms
+49 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 55ms
+50 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 50ms
+51 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 53ms
+52 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 77ms
+53 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 56ms
+54 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 54ms
+55 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 54ms
+56 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 49ms
+57 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 51ms
+58 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 53ms
+59 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 54ms
+60 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 64ms
+61 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 55ms
+62 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 53ms
+63 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 277ms
+64 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 61ms
+65 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 56ms
+66 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 149ms
+67 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 56ms
+68 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 54ms
+69 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 53ms
+70 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 53ms
+71 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 54ms
+72 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 84ms
+73 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 61ms
+74 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 56ms
+75 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 62ms
+76 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 48ms
+77 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 57ms
+78 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 85ms
+79 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 54ms
+80 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 47ms
+81 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 65ms
+82 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 93ms
+83 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 56ms
+84 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 191ms
+85 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 70ms
+86 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 57ms
+87 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 61ms
+88 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 62ms
+89 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 61ms
+90 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 58ms
+91 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 58ms
+92 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 57ms
+93 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 59ms
+94 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 61ms
+95 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 62ms
+96 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 53ms
+97 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 58ms
+98 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 53ms
+99 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 100ms
+100 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 61ms
+101 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 47ms
+102 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 51ms
+103 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 55ms
+104 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 51ms
+105 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 298ms
+106 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 58ms
+107 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 51ms
+108 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 56ms
+109 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 50ms
+110 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 62ms
+111 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 60ms
+112 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 53ms
+113 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 68ms
+114 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 64ms
+115 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 68ms
+116 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 57ms
+117 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 60ms
+118 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 59ms
+119 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 81ms
+120 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 57ms
+121 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 57ms
+122 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 58ms
+123 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 55ms
+124 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 64ms
+125 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 59ms
+126 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 56ms
+127 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 57ms
+128 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 55ms
+129 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 61ms
+130 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 81ms
+131 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 54ms
+132 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 72ms
+133 http fetch GET 202 https://registry.npmmirror.com/-/v1/login/done/session/*** 55ms
+134 verbose stack Error: canceled
+134 verbose stack     at D:\software\nvm\nvm\v20.19.3\node_modules\npm\lib\utils\open-url.js:76:15
+134 verbose stack     at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+134 verbose stack     at async openUrlPrompt (D:\software\nvm\nvm\v20.19.3\node_modules\npm\lib\utils\open-url.js:72:5)
+134 verbose stack     at async Promise.all (index 0)
+134 verbose stack     at async webAuthOpener (D:\software\nvm\nvm\v20.19.3\node_modules\npm\node_modules\npm-profile\lib\index.js:85:28)
+134 verbose stack     at async webAuth (D:\software\nvm\nvm\v20.19.3\node_modules\npm\node_modules\npm-profile\lib\index.js:68:12)
+134 verbose stack     at async Object.login (D:\software\nvm\nvm\v20.19.3\node_modules\npm\lib\utils\auth.js:77:13)
+134 verbose stack     at async Login.exec (D:\software\nvm\nvm\v20.19.3\node_modules\npm\lib\commands\login.js:31:35)
+134 verbose stack     at async Npm.exec (D:\software\nvm\nvm\v20.19.3\node_modules\npm\lib\npm.js:207:9)
+134 verbose stack     at async module.exports (D:\software\nvm\nvm\v20.19.3\node_modules\npm\lib\cli\entry.js:74:5)
+135 error canceled
+136 verbose cwd C:\Users\田小宇\Desktop\petdev
+137 verbose os Windows_NT 10.0.22621
+138 verbose node v20.19.3
+139 verbose npm  v10.8.2
+140 notice
+140 notice New [31mmajor[39m version of npm available! [31m10.8.2[39m -> [34m11.16.0[39m
+140 notice Changelog: [34mhttps://github.com/npm/cli/releases/tag/v11.16.0[39m
+140 notice To update run: [4mnpm install -g npm@11.16.0[24m
+140 notice  { force: true, [Symbol(proc-log.meta)]: true }
+141 verbose exit 1
+142 verbose code 1
+143 error A complete log of this run can be found in: C:\Users\田小宇\Desktop\petdev\.npm-cache\_logs\2026-05-28T15_01_00_367Z-debug-0.log

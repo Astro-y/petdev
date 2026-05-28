@@ -1,0 +1,33 @@
+import { PETS } from "./catalog.js";
+
+export const pets = PETS;
+
+export function findPet(id) {
+  const pet = pets.find((entry) => entry.id === id);
+  if (!pet) {
+    const available = pets.map((entry) => entry.id).join(", ");
+    throw new Error(`Unknown pet "${id}". Available pets: ${available}`);
+  }
+  return pet;
+}
+
+export function formatList() {
+  return pets
+    .map((pet) => `${pet.id.padEnd(28)} ${pet.displayName} (${pet.status})`)
+    .join("\n");
+}
+
+export function formatInfo(id) {
+  const pet = findPet(id);
+
+  return [
+    `${pet.displayName}`,
+    `id: ${pet.id}`,
+    `description: ${pet.description}`,
+    `version: ${pet.version}`,
+    `release: ${pet.releaseZip}`,
+    `install: ${pet.installCommand}`,
+    `tags: ${pet.tags.join(", ")}`
+  ].join("\n");
+}
+

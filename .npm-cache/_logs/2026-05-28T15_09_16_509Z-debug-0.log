@@ -1,0 +1,22 @@
+0 verbose cli D:\software\nodejs\node.exe D:\software\nvm\nvm\v20.19.3\node_modules\npm\bin\npm-cli.js
+1 info using npm@10.8.2
+2 info using node@v20.19.3
+3 silly config load:file:D:\software\nvm\nvm\v20.19.3\node_modules\npm\npmrc
+4 silly config load:file:C:\Users\田小宇\Desktop\petdev\.npmrc
+5 silly config load:file:C:\Users\田小宇\.npmrc
+6 silly config load:file:D:\software\nvm\nodejs\node_global\etc\npmrc
+7 verbose title npm exec petdev@latest install pajamas-crayon-shin-chan
+8 verbose argv "exec" "--yes" "--" "petdev@latest" "install" "pajamas-crayon-shin-chan"
+9 verbose logfile logs-max:10 dir:C:\Users\田小宇\Desktop\petdev\.npm-cache\_logs\2026-05-28T15_09_16_509Z-
+10 verbose logfile C:\Users\田小宇\Desktop\petdev\.npm-cache\_logs\2026-05-28T15_09_16_509Z-debug-0.log
+11 silly logfile done cleaning log files
+12 silly packumentCache heap:4345298944 maxSize:1086324736 maxEntrySize:543162368
+13 http fetch GET 200 https://registry.npmjs.org/petdev 418ms (cache revalidated)
+14 silly packumentCache heap:4345298944 maxSize:1086324736 maxEntrySize:543162368
+15 silly packumentCache heap:4345298944 maxSize:1086324736 maxEntrySize:543162368
+16 verbose cwd C:\Users\田小宇\Desktop\petdev
+17 verbose os Windows_NT 10.0.22621
+18 verbose node v20.19.3
+19 verbose npm  v10.8.2
+20 verbose exit 1
+21 verbose code 1
