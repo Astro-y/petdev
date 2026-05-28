@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useMemo, useState } from "react";
 import { CopyCommand } from "./copy-command";
 import { LanguageToggle, useLanguage } from "./language-provider";
 import { SpritePreview } from "./sprite-preview";
@@ -14,6 +15,7 @@ type DetailPet = {
   version: string;
   releaseZip: string;
   installCommand: string;
+  installOptions?: Record<string, Array<{ label: string; command: string }>>;
   disclaimer: string;
   tags: string[];
   sprite: {
@@ -29,6 +31,12 @@ type DetailPet = {
 export function PetDetailClient({ pet }: { pet: DetailPet }) {
   const { dictionary, language, petCopy } = useLanguage();
   const copy = petCopy(pet, language);
+  const installOptions = useMemo(() => normalizeInstallOptions(pet), [pet]);
+  const platforms = Object.keys(installOptions);
+  const [platform, setPlatform] = useState(platforms[0] || "windows");
+  const [methodIndex, setMethodIndex] = useState(0);
+  const methods = installOptions[platform] || installOptions[platforms[0]] || [];
+  const selectedMethod = methods[methodIndex] || methods[0];
 
   return (
     <main className="shell detailShell">
@@ -62,7 +70,34 @@ export function PetDetailClient({ pet }: { pet: DetailPet }) {
             <h2>{dictionary.detail.installTitle}</h2>
             <p>{dictionary.detail.installBody}</p>
           </div>
-          <CopyCommand command={pet.installCommand} labels={dictionary.detail} />
+          <div className="installTabs" aria-label="Operating system">
+            {platforms.map((item) => (
+              <button
+                className={platform === item ? "active" : ""}
+                key={item}
+                onClick={() => {
+                  setPlatform(item);
+                  setMethodIndex(0);
+                }}
+                type="button"
+              >
+                {platformLabels[item] || item}
+              </button>
+            ))}
+          </div>
+          <div className="installTabs installTabs-secondary" aria-label="Install method">
+            {methods.map((method, index) => (
+              <button
+                className={methodIndex === index ? "active" : ""}
+                key={method.label}
+                onClick={() => setMethodIndex(index)}
+                type="button"
+              >
+                {method.label}
+              </button>
+            ))}
+          </div>
+          <CopyCommand command={selectedMethod.command} labels={dictionary.detail} />
         </article>
 
         <article className="infoPanel">
@@ -95,4 +130,22 @@ export function PetDetailClient({ pet }: { pet: DetailPet }) {
       </section>
     </main>
   );
+}
+
+const platformLabels: Record<string, string> = {
+  windows: "Windows",
+  macos: "macOS",
+  linux: "Linux"
+};
+
+function normalizeInstallOptions(pet: DetailPet) {
+  if (pet.installOptions) {
+    return pet.installOptions;
+  }
+
+  return {
+    windows: [{ label: "CLI", command: pet.installCommand }],
+    macos: [{ label: "CLI", command: pet.installCommand }],
+    linux: [{ label: "CLI", command: pet.installCommand }]
+  };
 }

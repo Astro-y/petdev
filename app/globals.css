@@ -247,6 +247,34 @@ h2 {
   border-radius: 8px;
 }
 
+.installTabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.installTabs-secondary {
+  margin-top: 10px;
+}
+
+.installTabs button {
+  min-width: 84px;
+  height: 38px;
+  padding: 0 14px;
+  color: var(--ink);
+  background: #f5f0dc;
+  border: 2px solid var(--line);
+  border-radius: 999px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.installTabs button.active {
+  background: var(--mint);
+  box-shadow: 3px 3px 0 rgba(32, 51, 58, 0.18);
+}
+
 .commandBox code {
   overflow-x: auto;
   color: #f8f4dd;

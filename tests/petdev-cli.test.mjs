@@ -18,6 +18,19 @@ test("catalog exposes the first pet and its public install command", () => {
   assert.equal(pet.id, "pajamas-crayon-shin-chan");
   assert.equal(pet.displayName, "Pajamas Crayon Shin-chan");
   assert.equal(pet.installCommand, "npx petdev install pajamas-crayon-shin-chan");
+  assert.deepEqual(
+    pet.installOptions.windows.map((option) => option.label),
+    ["CLI", "PowerShell"]
+  );
+  assert.equal(pet.installOptions.macos[0].command, "npx petdev install pajamas-crayon-shin-chan");
+  assert.equal(
+    pet.installOptions.windows[1].command,
+    "irm https://petdev.8xy.net/install/pajamas-crayon-shin-chan?platform=ps1 | iex"
+  );
+  assert.equal(
+    pet.installOptions.linux[1].command,
+    "curl -sSf https://petdev.8xy.net/install/pajamas-crayon-shin-chan | sh"
+  );
   assert.equal(pets.length, 1);
 });
 

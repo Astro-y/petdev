@@ -122,6 +122,41 @@ function renderCatalogEntry(pet) {
     releaseZip:
       "https://github.com/Astro-y/petdev/releases/download/${escapeJs(pet.tag)}/${escapeJs(pet.id)}.zip",
     installCommand: "npx petdev install ${escapeJs(pet.id)}",
+    installOptions: {
+      windows: [
+        {
+          label: "CLI",
+          command: "npx petdev install ${escapeJs(pet.id)}"
+        },
+        {
+          label: "PowerShell",
+          command:
+            "irm https://petdev.8xy.net/install/${escapeJs(pet.id)}?platform=ps1 | iex"
+        }
+      ],
+      macos: [
+        {
+          label: "CLI",
+          command: "npx petdev install ${escapeJs(pet.id)}"
+        },
+        {
+          label: "Shell",
+          command:
+            "curl -sSf https://petdev.8xy.net/install/${escapeJs(pet.id)} | sh"
+        }
+      ],
+      linux: [
+        {
+          label: "CLI",
+          command: "npx petdev install ${escapeJs(pet.id)}"
+        },
+        {
+          label: "Shell",
+          command:
+            "curl -sSf https://petdev.8xy.net/install/${escapeJs(pet.id)} | sh"
+        }
+      ]
+    },
     disclaimer:
       "This is an unofficial fan-made Codex pet package for personal use. It is not affiliated with or endorsed by the original character rights holders."
   }`;

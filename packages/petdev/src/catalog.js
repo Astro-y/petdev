@@ -32,6 +32,41 @@ export const PETS = [
     releaseZip:
       "https://github.com/Astro-y/petdev/releases/download/v1.0.0/pajamas-crayon-shin-chan.zip",
     installCommand: "npx petdev install pajamas-crayon-shin-chan",
+    installOptions: {
+      windows: [
+        {
+          label: "CLI",
+          command: "npx petdev install pajamas-crayon-shin-chan"
+        },
+        {
+          label: "PowerShell",
+          command:
+            "irm https://petdev.8xy.net/install/pajamas-crayon-shin-chan?platform=ps1 | iex"
+        }
+      ],
+      macos: [
+        {
+          label: "CLI",
+          command: "npx petdev install pajamas-crayon-shin-chan"
+        },
+        {
+          label: "Shell",
+          command:
+            "curl -sSf https://petdev.8xy.net/install/pajamas-crayon-shin-chan | sh"
+        }
+      ],
+      linux: [
+        {
+          label: "CLI",
+          command: "npx petdev install pajamas-crayon-shin-chan"
+        },
+        {
+          label: "Shell",
+          command:
+            "curl -sSf https://petdev.8xy.net/install/pajamas-crayon-shin-chan | sh"
+        }
+      ]
+    },
     disclaimer:
       "This is an unofficial fan-made Codex pet package for personal use. It is not affiliated with or endorsed by the original character rights holders."
   }
