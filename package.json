@@ -11,7 +11,8 @@
     "build": "next build",
     "start": "next start",
     "test": "node --test",
-    "test:cli": "node --test tests/petdev-cli.test.mjs"
+    "test:cli": "node --test tests/petdev-cli.test.mjs",
+    "add:pet": "node scripts/add-pet.mjs"
   },
   "dependencies": {
     "next": "^16.0.5",

@@ -1,12 +1,16 @@
 import assert from "node:assert/strict";
+import { execFile } from "node:child_process";
 import { mkdtemp, readFile, rm, stat } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import path from "node:path";
 import test from "node:test";
+import { promisify } from "node:util";
 
 import { pets } from "../src/lib/pets.js";
 import { findPet, formatInfo, formatList } from "../packages/petdev/src/registry.js";
 import { installPet } from "../packages/petdev/src/install.js";
+
+const execFileAsync = promisify(execFile);
 
 test("catalog exposes the first pet and its public install command", () => {
   const pet = findPet("pajamas-crayon-shin-chan");
@@ -18,8 +22,20 @@ test("catalog exposes the first pet and its public install command", () => {
 });
 
 test("list and info commands render catalog content", () => {
-  assert.match(formatList(), /pajamas-crayon-shin-chan\s+Pajamas Crayon Shin-chan/);
+  assert.match(formatList(), /Available pets:/);
+  assert.match(formatList(), /- Pajamas Crayon Shin-chan/);
+  assert.match(formatList(), /id: pajamas-crayon-shin-chan/);
+  assert.match(formatList(), /install: npx petdev install pajamas-crayon-shin-chan/);
   assert.match(formatInfo("pajamas-crayon-shin-chan"), /npx petdev install pajamas-crayon-shin-chan/);
+});
+
+test("help guides people to list pets or browse the website before installing", async () => {
+  const { stdout } = await execFileAsync("node", ["packages/petdev/bin/petdev.js"]);
+
+  assert.match(stdout, /npx petdev list/);
+  assert.match(stdout, /https:\/\/petdev\.8xy\.net\//);
+  assert.match(stdout, /npx petdev install <pet-id>/);
+  assert.doesNotMatch(stdout, /npx petdev install pajamas-crayon-shin-chan/);
 });
 
 test("install command extracts a pet package into the Codex pets directory", async () => {

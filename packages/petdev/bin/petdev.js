@@ -28,7 +28,9 @@ try {
 
 function requirePetId(value, commandName) {
   if (!value) {
-    throw new Error(`Usage: petdev ${commandName} <pet-id>`);
+    throw new Error(
+      `Usage: petdev ${commandName} <pet-id>\nRun "npx petdev list" first, or browse https://petdev.8xy.net/ to choose a pet.`
+    );
   }
 }
 
@@ -40,7 +42,10 @@ Usage:
   petdev info <pet-id>
   petdev install <pet-id>
 
-Example:
-  npx petdev install pajamas-crayon-shin-chan`);
-}
+Choose a pet:
+  npx petdev list
+  https://petdev.8xy.net/
 
+Install:
+  npx petdev install <pet-id>`);
+}

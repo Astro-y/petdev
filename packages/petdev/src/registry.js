@@ -12,9 +12,20 @@ export function findPet(id) {
 }
 
 export function formatList() {
-  return pets
-    .map((pet) => `${pet.id.padEnd(28)} ${pet.displayName} (${pet.status})`)
-    .join("\n");
+  return [
+    "Available pets:",
+    "",
+    ...pets.map((pet) =>
+      [
+        `- ${pet.displayName}`,
+        `  id: ${pet.id}`,
+        `  status: ${pet.status}`,
+        `  install: ${pet.installCommand}`
+      ].join("\n")
+    ),
+    "",
+    "Browse: https://petdev.8xy.net/"
+  ].join("\n");
 }
 
 export function formatInfo(id) {
@@ -30,4 +41,3 @@ export function formatInfo(id) {
     `tags: ${pet.tags.join(", ")}`
   ].join("\n");
 }
-
