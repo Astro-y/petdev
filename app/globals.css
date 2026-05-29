@@ -47,13 +47,17 @@ a {
 
 .catalogHero {
   display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 24px;
+  grid-template-columns: minmax(0, 1fr) 190px;
+  gap: 34px;
   align-items: center;
   min-height: 320px;
-  padding: 42px;
+  padding: 42px 48px;
   background: linear-gradient(135deg, rgba(255, 253, 246, 0.92), rgba(157, 223, 195, 0.9));
   border-radius: 8px;
+}
+
+.heroCopy {
+  min-width: 0;
 }
 
 .eyebrow,
@@ -122,10 +126,17 @@ h2 {
   background: var(--sun);
 }
 
+.heroAside {
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  gap: 18px;
+}
+
 .heroBadge {
   display: grid;
   place-items: center;
-  width: 124px;
+  width: 132px;
   aspect-ratio: 1;
   background: var(--sun);
   border: 3px solid var(--line);
@@ -238,11 +249,11 @@ h2 {
 
 .commandBox {
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: minmax(0, 1fr) auto;
   gap: 12px;
   align-items: center;
   margin-top: 20px;
-  padding: 12px;
+  padding: 12px 14px;
   background: #20333a;
   border-radius: 8px;
 }
@@ -276,10 +287,13 @@ h2 {
 }
 
 .commandBox code {
-  overflow-x: auto;
+  display: block;
+  min-width: 0;
   color: #f8f4dd;
   font-size: 0.95rem;
-  white-space: nowrap;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+  white-space: normal;
 }
 
 .commandBox button {
@@ -384,8 +398,13 @@ dd {
     padding: 26px;
   }
 
+  .heroAside {
+    justify-items: center;
+    align-content: start;
+  }
+
   .heroBadge {
-    width: 94px;
+    width: 104px;
   }
 
   .petCard {
@@ -394,6 +413,10 @@ dd {
 
   .commandBox {
     grid-template-columns: 1fr;
+  }
+
+  .commandBox button {
+    width: 100%;
   }
 
   .topLine,

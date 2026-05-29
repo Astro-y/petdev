@@ -1,7 +1,13 @@
 "use client";
 
-import { createContext, useContext, useMemo, useState } from "react";
-import { getDictionary, getPetCopy, languages, normalizeLanguage } from "../../src/lib/i18n.js";
+import { createContext, useContext, useEffect, useMemo, useState } from "react";
+import {
+  getDictionary,
+  getPetCopy,
+  getPreferredLanguage,
+  languages,
+  normalizeLanguage
+} from "../../src/lib/i18n.js";
 
 type LanguageContextValue = {
   language: string;
@@ -11,14 +17,21 @@ type LanguageContextValue = {
 };
 
 const LanguageContext = createContext<LanguageContextValue | null>(null);
+const languageStorageKey = "petdev-language";
 
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const [language, setLanguageState] = useState("en");
   const normalized = normalizeLanguage(language);
   const dictionary = getDictionary(normalized);
 
+  useEffect(() => {
+    setLanguageState(getPreferredLanguage(readStoredLanguage(), getBrowserLanguages()));
+  }, []);
+
   function setLanguage(nextLanguage: string) {
-    setLanguageState(normalizeLanguage(nextLanguage));
+    const normalizedLanguage = normalizeLanguage(nextLanguage);
+    setLanguageState(normalizedLanguage);
+    writeStoredLanguage(normalizedLanguage);
   }
 
   const value = useMemo(
@@ -32,6 +45,27 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   );
 
   return <LanguageContext.Provider value={value}>{children}</LanguageContext.Provider>;
+}
+
+function getBrowserLanguages() {
+  const browserLanguages = navigator.languages?.length ? navigator.languages : [navigator.language];
+  return Array.from(browserLanguages);
+}
+
+function readStoredLanguage() {
+  try {
+    return window.localStorage.getItem(languageStorageKey);
+  } catch {
+    return null;
+  }
+}
+
+function writeStoredLanguage(language: string) {
+  try {
+    window.localStorage.setItem(languageStorageKey, language);
+  } catch {
+    // Ignore storage failures so the language toggle still works in restricted browsers.
+  }
 }
 
 export function useLanguage() {

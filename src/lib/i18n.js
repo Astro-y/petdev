@@ -3,6 +3,16 @@ export const languages = [
   { code: "zh", label: "中文", shortLabel: "中" }
 ];
 
+const tagLabels = {
+  en: {},
+  zh: {
+    pajamas: "睡衣",
+    cartoon: "卡通",
+    sleepy: "困困",
+    "codex-pet": "Codex 桌宠"
+  }
+};
+
 const dictionaries = {
   en: {
     common: {
@@ -70,6 +80,20 @@ export function normalizeLanguage(language) {
 
 export function getDictionary(language) {
   return dictionaries[normalizeLanguage(language)];
+}
+
+export function getTagLabel(tag, language) {
+  const normalized = normalizeLanguage(language);
+  return tagLabels[normalized]?.[tag] || tag;
+}
+
+export function getLanguageFromLocales(locales = []) {
+  const preferredLocale = locales.find(Boolean)?.toLowerCase() || "";
+  return preferredLocale.startsWith("zh") ? "zh" : "en";
+}
+
+export function getPreferredLanguage(storedLanguage, locales = []) {
+  return dictionaries[storedLanguage] ? storedLanguage : getLanguageFromLocales(locales);
 }
 
 export function getPetCopy(pet, language) {

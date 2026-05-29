@@ -2,9 +2,17 @@
 node_modules/
 out/
 dist/
+coverage/
+test-results/
+playwright-report/
 *.tsbuildinfo
+*.log
 .env*
 !.env.example
 .vercel/
 .superpowers/
+.npm-cache/
 test-fixtures/
+*-layout-check.png
+Thumbs.db
+.DS_Store

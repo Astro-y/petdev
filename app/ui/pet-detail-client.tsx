@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
+import { getTagLabel } from "../../src/lib/i18n";
 import { CopyCommand } from "./copy-command";
 import { LanguageToggle, useLanguage } from "./language-provider";
 import { SpritePreview } from "./sprite-preview";
@@ -35,8 +36,17 @@ export function PetDetailClient({ pet }: { pet: DetailPet }) {
   const platforms = Object.keys(installOptions);
   const [platform, setPlatform] = useState(platforms[0] || "windows");
   const [methodIndex, setMethodIndex] = useState(0);
+  const [siteOrigin, setSiteOrigin] = useState("");
   const methods = installOptions[platform] || installOptions[platforms[0]] || [];
   const selectedMethod = methods[methodIndex] || methods[0];
+  const selectedCommand = useMemo(
+    () => localizeInstallCommand(selectedMethod?.command || "", siteOrigin),
+    [selectedMethod?.command, siteOrigin]
+  );
+
+  useEffect(() => {
+    setSiteOrigin(window.location.origin);
+  }, []);
 
   return (
     <main className="shell detailShell">
@@ -57,7 +67,7 @@ export function PetDetailClient({ pet }: { pet: DetailPet }) {
           <p className="lede">{copy.description}</p>
           <div className="tagRow">
             {pet.tags.map((tag) => (
-              <span key={tag}>{tag}</span>
+              <span key={tag}>{getTagLabel(tag, language)}</span>
             ))}
           </div>
         </div>
@@ -97,7 +107,7 @@ export function PetDetailClient({ pet }: { pet: DetailPet }) {
               </button>
             ))}
           </div>
-          <CopyCommand command={selectedMethod.command} labels={dictionary.detail} />
+          <CopyCommand command={selectedCommand} labels={dictionary.detail} />
         </article>
 
         <article className="infoPanel">
@@ -130,6 +140,14 @@ export function PetDetailClient({ pet }: { pet: DetailPet }) {
       </section>
     </main>
   );
+}
+
+function localizeInstallCommand(command: string, siteOrigin: string) {
+  if (!siteOrigin) {
+    return command;
+  }
+
+  return command.replaceAll("https://petdev.8xy.net", siteOrigin);
 }
 
 const platformLabels: Record<string, string> = {

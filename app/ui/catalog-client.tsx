@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { getTagLabel } from "../../src/lib/i18n";
 import { LanguageToggle, useLanguage } from "./language-provider";
 import { SpritePreview } from "./sprite-preview";
 
@@ -27,17 +28,19 @@ export function CatalogClient({ pets }: { pets: CatalogPet[] }) {
   return (
     <main className="shell">
       <section className="catalogHero">
-        <div>
+        <div className="heroCopy">
           <div className="topLine">
             <p className="eyebrow">{dictionary.catalog.eyebrow}</p>
-            <LanguageToggle />
           </div>
           <h1>{dictionary.catalog.title}</h1>
           <p className="lede">{dictionary.catalog.lede}</p>
         </div>
-        <div className="heroBadge" aria-label={`${pets.length} ${countLabel}`}>
-          <strong>{pets.length}</strong>
-          <span>{countLabel}</span>
+        <div className="heroAside">
+          <LanguageToggle />
+          <div className="heroBadge" aria-label={`${pets.length} ${countLabel}`}>
+            <strong>{pets.length}</strong>
+            <span>{countLabel}</span>
+          </div>
         </div>
       </section>
 
@@ -56,7 +59,7 @@ export function CatalogClient({ pets }: { pets: CatalogPet[] }) {
                 <p>{copy.description}</p>
                 <div className="tagRow">
                   {pet.tags.slice(0, 3).map((tag) => (
-                    <span key={tag}>{tag}</span>
+                    <span key={tag}>{getTagLabel(tag, language)}</span>
                   ))}
                 </div>
               </div>
@@ -67,4 +70,3 @@ export function CatalogClient({ pets }: { pets: CatalogPet[] }) {
     </main>
   );
 }
-
